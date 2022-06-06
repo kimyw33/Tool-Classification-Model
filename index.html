@@ -192,27 +192,27 @@
             var image = document.getElementById("tool-image") // tool-image로 html element 가져오는 내용 추가
             const prediction = await model.predict(image, false); // id="tool-image" 추가
             if(prediction[0].probability>0.4){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[0].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[0].className+"' 입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '너무 세게 돌리지 않기'입니다";
                 labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '시계방향이 조이는 것'입니다";
             }
             else if(prediction[1].probability>0.4){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[1].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[1].className+"' 입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '작업 중간중간 조임나사가 풀리지 않았는지 확인하기'입니다";
                 labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '작업물이 완전히 고정되도록 꽉 조이기'입니다";
             }
             else if(prediction[2].probability>0.4){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[2].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[2].className+"' 입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '날카로울 수 있으니 장난치지 않기'입니다";
                 labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '큰 직경(구멍)부터 순서대로 활용하기'입니다";
             }
             else if(prediction[3].probability>0.4){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[3].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[3].className+"' 입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '화상을 입을 수 있으므로 인두 받침대에 두고 사용할 것'입니다";
                 labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '인두기 팁을 조절하여 적정 온도를 맞출 것'입니다";
             }
             else if(prediction[4].probability>0.4){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[4].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[4].className+"' 입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '두드리거나 때리는 등 망치의 용도로 사용하지 않기'입니다";
                 labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '잡거나 구부리는 것 외에 자르기도 가능 함'입니다";
             }
