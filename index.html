@@ -194,6 +194,9 @@
             if(prediction[0].probability>0.5){
                 "공구의 명칭은"+prediction[0].className+"입니다."
             }
+            else{
+                "나도 잘 모르겄어"
+            }
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
