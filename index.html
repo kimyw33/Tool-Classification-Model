@@ -193,27 +193,32 @@
             const prediction = await model.predict(image, false); // id="tool-image" 추가
             if(prediction[0].probability>0.4){
                 labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[0].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 A입니다";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '너무 세게 돌리지 않기'입니다";
+                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '시계방향이 조이는 것'입니다";
             }
             else if(prediction[1].probability>0.4){
                 labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[1].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 B입니다";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '작업 중간중간 조임나사가 풀리지 않았는지 확인하기'입니다";
+                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '작업물이 완전히 고정되도록 꽉 조이기'입니다";
             }
             else if(prediction[2].probability>0.4){
-                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[2].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 C입니다";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[2].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '날카로울 수 있으니 장난치지 않기'입니다";
+                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '큰 직경(구멍)부터 순서대로 활용하기'입니다";
             }
             else if(prediction[3].probability>0.4){
-                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[3].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 D입니다";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[3].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '화상을 입을 수 있으므로 인두 받침대에 두고 사용할 것'입니다";
+                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '인두기 팁을 조절하여 적정 온도를 맞출 것'입니다";
             }
             else if(prediction[4].probability>0.4){
-                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[4].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 E입니다";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[4].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '두드리거나 때리는 등 망치의 용도로 사용하지 않기'입니다";
+                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '잡거나 구부리는 것 외에 자르기도 가능 함'입니다";
             }
             else{
-                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[5].className+"입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 F입니다";
+                labelContainer.childNodes[0].innerHTML = "공구가 무엇인지 구분이 안되었어요.";
+                labelContainer.childNodes[1].innerHTML = "아래 '모델 성능 개선에 참여하기'의 안내를 참고하세요.";
             }
 
             // 아래 내용 참고하여 위 부분(label~) 추가 및 수정
@@ -292,8 +297,11 @@ init();
     </script>
     <!-- 이미지 선택 및 업로드 코드(javasctipt) 끝 -->
 </body>
+모델 성능 개선에 참여하기<br>
+  1. 촬영한 공구의 명칭을 알아보고(쌤에게 물어봐도 좋습니다.)<br>
+  2. 아래 링크(구글 드라이브)에 접속하여, 촬영한 사진을 업로드하세요<br>
+  3. 링크: 추후 업로드 예정<br>
 도움이 된 사이트<br>
 1. https://github.com/googlecreativelab/teachablemachine-community/blob/master/libraries/image/README.m<br>
 2. https://codepen.io/kimyw33/pen/poaLGo<br>
-3. 왜 안되지?<br>
 </html>
