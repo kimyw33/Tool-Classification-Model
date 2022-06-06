@@ -192,10 +192,10 @@
             var image = document.getElementById("tool-image") // tool-image로 html element 가져오는 내용 추가
             const prediction = await model.predict(image, false); // id="tool-image" 추가
             if(prediction[0].probability>0.5){
-                "공구의 명칭은"+prediction[0].className+"입니다."
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[0].className+"입니다."
             }
             else{
-                "나도 잘 모르겄어"
+                labelContainer.childNodes[0].innerHTML = "나도 잘 모르것어"
             }
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
