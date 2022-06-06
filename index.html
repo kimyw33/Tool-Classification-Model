@@ -134,7 +134,7 @@
 
     <!-- start 버튼 클릭 없이 바로 실행되도록 변경
     <button type="button" onclick="init()">start</button> -->
-    init();
+
     <button type="button" onclick="predict()">예측하기(이미지 불러온 후 실행)</button>
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -214,13 +214,12 @@
     <!-- 이미지 선택 및 업로드 코드(html) 시작 -->
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <div class="file-upload">
-        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
-            Image</button>
+        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">이미지 추가하기</button>
 
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
-                <h3>Drag and drop a file or select add Image</h3>
+                <h3>이미지 파일을 가져가 놓거나 이미지 추가하기를 선택하세요</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -266,7 +265,7 @@
         $('.image-upload-wrap').bind('dragleave', function () {
             $('.image-upload-wrap').removeClass('image-dropping');
         });
-
+init(); 
     </script>
     <!-- 이미지 선택 및 업로드 코드(javasctipt) 끝 -->
 </body>
