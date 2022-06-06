@@ -193,10 +193,10 @@
             const prediction = await model.predict(image, false); // id="tool-image" 추가
             if(prediction[0].probability>0.4){
                 labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[0].className+"입니다.";
-                labelContainer.childNodes[0].innerHTML = "공구 사용시 주의사항은 A입니다";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 A입니다";
             }
             else if(prediction[1].probability>0.4){
-                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[1].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[1].className+"입니다.";
                 labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 B입니다";
             }
             else if(prediction[2].probability>0.4){
