@@ -197,11 +197,11 @@
             else{
                 labelContainer.childNodes[0].innerHTML = "나도 잘 모르것어"
             }
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
+            // for (let i = 0; i < maxPredictions; i++) {
+            //     const classPrediction =
+            //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            //     labelContainer.childNodes[i].innerHTML = classPrediction;
+            // }
             //    아래 predict 함수의 webcam 관련 부분 위와 같이 수정
             //     async function predict() {
             //         // predict can take in an image, video or canvas html element
