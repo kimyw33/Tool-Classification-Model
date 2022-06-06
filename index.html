@@ -192,14 +192,20 @@
             var image = document.getElementById("tool-image") // tool-image로 html element 가져오는 내용 추가
             const prediction = await model.predict(image, false); // id="tool-image" 추가
             if(prediction[0].probability>0.6){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[0].className+"' 입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '나사산이 망가지므로, 힘을 너무 세게 가하지 않기'입니다";
-                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '시계방향이 조이는 것'입니다";
+                labelContainer.childNodes[0].innerHTML = 
+                "공구의 명칭은 '"+prediction[0].className+"' 입니다.";
+                labelContainer.childNodes[1].innerHTML = 
+                "공구 사용시 주의사항은 '나사산이 망가지므로, 힘을 너무 세게 가하지 않기'입니다";
+                labelContainer.childNodes[2].innerHTML = 
+                "공구 사용시 유용한 팁은 '시계방향이 조이는 것'입니다";
             }
             else if(prediction[1].probability>0.6){
-                labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[1].className+"' 입니다.";
-                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 '작업 중간중간 조임나사가 풀리지 않았는지 확인하기'입니다";
-                labelContainer.childNodes[2].innerHTML = "공구 사용시 유용한 팁은 '작업물이 완전히 고정되도록 꽉 조이기'입니다";
+                labelContainer.childNodes[0].innerHTML = 
+                "공구의 명칭은 '"+prediction[1].className+"' 입니다.";
+                labelContainer.childNodes[1].innerHTML = 
+                "공구 사용시 주의사항은 '작업 중간중간 조임나사가 풀리지 않았는지 확인하기'입니다";
+                labelContainer.childNodes[2].innerHTML = 
+                "공구 사용시 유용한 팁은 '작업물이 완전히 고정되도록 꽉 조이기'입니다";
             }
             else if(prediction[2].probability>0.6){
                 labelContainer.childNodes[0].innerHTML = "공구의 명칭은 '"+prediction[2].className+"' 입니다.";
@@ -298,10 +304,10 @@ init();
     </script>
     <!-- 이미지 선택 및 업로드 코드(javasctipt) 끝 -->
 </body>
-모델 성능 개선에 참여하기(모델이 공구를 잘못 분류했거나, 분류는 못하는 경우)<br>
+<!-- 모델 성능 개선에 참여하기(모델이 공구를 잘못 분류했거나, 분류는 못하는 경우)<br>
   1. 촬영한 공구의 명칭을 알아보고(쌤에게 물어봐도 좋습니다.)<br>
   2. 아래 링크(구글 드라이브)에 접속하여, 촬영한 사진을 업로드하세요<br>
-  3. 링크: 추후 업로드 예정<br>
+  3. 링크: 추후 업로드 예정<br> -->
 도움이 된 사이트<br>
 1. https://github.com/googlecreativelab/teachablemachine-community/blob/master/libraries/image/README.m<br>
 2. https://codepen.io/kimyw33/pen/poaLGo<br>
