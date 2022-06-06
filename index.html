@@ -191,12 +191,32 @@
             // predict can take in an image, video or canvas html element
             var image = document.getElementById("tool-image") // tool-image로 html element 가져오는 내용 추가
             const prediction = await model.predict(image, false); // id="tool-image" 추가
-            if(prediction[0].probability>0.5){
+            if(prediction[0].probability>0.4){
                 labelContainer.childNodes[0].innerHTML = "공구의 명칭은"+prediction[0].className+"입니다.";
+                labelContainer.childNodes[0].innerHTML = "공구 사용시 주의사항은 A입니다";
+            }
+            else if(prediction[1].probability>0.4){
+                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[1].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 B입니다";
+            }
+            else if(prediction[2].probability>0.4){
+                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[2].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 C입니다";
+            }
+            else if(prediction[3].probability>0.4){
+                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[3].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 D입니다";
+            }
+            else if(prediction[4].probability>0.4){
+                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[4].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 E입니다";
             }
             else{
-                labelContainer.childNodes[0].innerHTML = "나도 잘 모르것어";
+                labelContainer.childNodes[1].innerHTML = "공구의 명칭은"+prediction[5].className+"입니다.";
+                labelContainer.childNodes[1].innerHTML = "공구 사용시 주의사항은 F입니다";
             }
+
+            // 아래 내용 참고하여 위 부분(label~) 추가 및 수정
             // for (let i = 0; i < maxPredictions; i++) {
             //     const classPrediction =
             //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
